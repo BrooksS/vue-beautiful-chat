@@ -83,7 +83,7 @@ export default {
 
 .sc-message--content.sent .sc-message--file-text {
   color: white;
-  background-color: #4e8cff;
+  background-color: #5D1E8C;
   word-wrap: break-word;
 }
 

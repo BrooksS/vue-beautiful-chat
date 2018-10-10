@@ -1,5 +1,5 @@
 <template>
-  <div class="sc-chat-window" :class="{opened: isOpen, closed: !isOpen}">
+  <div v-if="isOpen" class="sc-chat-window">
     <Header
       :title="title"
       :imageUrl="titleImageUrl"
@@ -7,7 +7,7 @@
       :colors="colors"
       @userList="handleUserListToggle"
     />
-    <UserList 
+    <UserList
       v-if="showUserList"
       :participants="participants"
     />
@@ -117,50 +117,19 @@ export default {
 </script>
 <style scoped>
 .sc-chat-window {
-  width: 370px;
-  height: calc(100% - 120px);
-  max-height: 590px;
-  position: fixed;
-  right: 25px;
-  bottom: 100px;
-  box-sizing: border-box;
-  box-shadow: 0px 7px 40px 2px rgba(148, 149, 150, 0.1);
   background: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: 0.3s ease-in-out;
-  border-radius: 10px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-.sc-chat-window.closed {
-  opacity: 0;
-  visibility: hidden;
-  bottom: 90px;
+  font-family: 'Lato', sans-serif;
 }
 
 .sc-message--me {
   text-align: right;
 }
+
 .sc-message--them {
   text-align: left;
-}
-
-@media (max-width: 450px) {
-  .sc-chat-window {
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    right: 0px;
-    bottom: 0px;
-    border-radius: 0px;
-  }
-  .sc-chat-window {
-    transition: 0.1s ease-in-out;
-  }
-  .sc-chat-window.closed {
-    bottom: 0px;
-  }
 }
 </style>

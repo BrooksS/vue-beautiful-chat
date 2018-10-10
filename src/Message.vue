@@ -76,9 +76,8 @@ export default {
 </script>
 <style lang="scss">
 .sc-message {
-  width: 300px;
   margin: auto;
-  padding-bottom: 10px;
+  padding: 10px;
   display: flex;
 }
 
@@ -130,12 +129,12 @@ export default {
   font-size: 14px;
   line-height: 1.4;
   /* white-space: pre-wrap; */
-  -webkit-font-smoothing: subpixel-antialiased
+  -webkit-font-smoothing: subpixel-antialiased;
+  max-width: 500px;
 }
 .sc-message--content.sent .sc-message--text {
   color: white;
-  background-color: #4e8cff;
-  max-width: calc(100% - 120px);
+  background-color: #5D1E8C;
   word-wrap: break-word;
 }
 
