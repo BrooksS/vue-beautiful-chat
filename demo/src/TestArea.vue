@@ -109,7 +109,7 @@ export default {
 }
 
 .demo-test-area--button {
-  font-family: Avenir Next, Helvetica Neue, Helvetica, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   margin-top: 20px;
   user-select: none;

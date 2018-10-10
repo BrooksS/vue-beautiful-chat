@@ -1,7 +1,6 @@
 <template>
-  <div :style="{background: backgroundColor}">
-    <Header :colors="colors" :chosenColor="chosenColor" />
-    <beautiful-chat
+  <div>
+    <mab-chat
       :participants="participants"
       :titleImageUrl="titleImageUrl"
       :onMessageWasSent="onMessageWasSent"
@@ -13,20 +12,7 @@
       :showEmoji="true"
       :showFile="true"
       :showTypingIndicator="showTypingIndicator"
-      :colors="colors"
       :alwaysScrollToBottom="alwaysScrollToBottom" />
-      <p class="text-center toggle">
-        <a v-if="!isChatOpen" :style="{color: linkColor}" href="#" @click.prevent="openChat()">Open the chat window</a>
-        <a v-else :style="{color: linkColor}" href="#" @click.prevent="closeChat()">Close the chat window</a>
-      </p>
-      <p class="text-center colors">
-        <a :style="{background: availableColors.blue.launcher.bg}" href="#" @click.prevent="setColor('blue')">Blue</a>
-        <a :style="{background: availableColors.red.launcher.bg}" href="#" @click.prevent="setColor('red')">Red</a>
-        <a :style="{background: availableColors.green.launcher.bg}" href="#" @click.prevent="setColor('green')">Green</a>
-        <a :style="{background: availableColors.dark.launcher.bg}" href="#" @click.prevent="setColor('dark')">Dark</a>
-      </p>
-    <TestArea :onMessage="sendMessage" :onTyping="handleTyping" :colors="colors" :chosenColor="chosenColor" />
-    <Footer :colors="colors" :chosenColor="chosenColor" />
   </div>
 </template>
 
@@ -49,7 +35,7 @@ export default {
       titleImageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
       messageList: messageHistory,
       newMessagesCount: 0,
-      isChatOpen: false,
+      isChatOpen: true,
       showTypingIndicator: '',
       colors: null,
       availableColors,
@@ -103,7 +89,7 @@ body {
 }
 
 * {
-  font-family: Avenir Next, Helvetica Neue, Helvetica,sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .demo-description {
@@ -125,7 +111,7 @@ body {
   margin: 0px;
   padding: 0px;
   resize: none;
-  font-family: Avenir Next, Helvetica Neue, Helvetica,sans-serif;
+  font-family: 'Lato', sans-serif;
   background: #fafbfc;
   color: #8da2b5;
   border: 1px solid #dde5ed;

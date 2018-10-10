@@ -1,12 +1,5 @@
 <template>
   <div>
-    <div class="sc-launcher" :class="{opened: isOpen}" @click.prevent="isOpen ? close() : open()" :style="{backgroundColor: colors.launcher.bg}">
-      <div v-if="newMessagesCount > 0 && !isOpen" class="sc-new-messsages-count">
-        {{newMessagesCount}}
-      </div>
-      <img class="sc-open-icon" src="./assets/close-icon.png" />
-      <img class="sc-closed-icon" src="./assets/logo-no-bg.svg" />
-    </div>
     <ChatWindow
       :messageList="messageList"
       :onUserInputSubmit="onMessageWasSent"
@@ -84,7 +77,7 @@ export default {
     colors: {
       type: Object,
       required: false,
-      validator: c => 
+      validator: c =>
         'header' in c
         && 'bg' in c.header && 'text' in c.header
         && 'launcher' in c
@@ -100,22 +93,22 @@ export default {
       default: function () {
         return {
           header: {
-            bg: '#4e8cff',
+            bg: '#5D1E8C',
             text: '#ffffff'
           },
           launcher: {
-            bg: '#4e8cff'
+            bg: '#5D1E8C'
           },
           messageList: {
             bg: '#ffffff'
           },
           sentMessage: {
-            bg: '#4e8cff',
+            bg: '#5D1E8C',
             text: '#ffffff'
           },
           receivedMessage: {
-            bg: '#f4f7f9',
-            text: '#ffffff'
+            bg: '#E6E6E6',
+            text: '#222222'
           },
           userInput: {
             bg: '#f4f7f9',
@@ -152,11 +145,7 @@ export default {
   width: 60px;
   height: 60px;
   background-position: center;
-  background-repeat: no-repeat;
-  position: fixed;
-  right: 25px;
-  bottom: 25px;
-  border-radius: 50%;
+  background-repeat: no-repeat;  border-radius: 50%;
   box-shadow: none;
   transition: box-shadow 0.2s ease-in-out;
   cursor: pointer;
@@ -167,7 +156,7 @@ export default {
   position: relative;
   display: block;
   width: 60px;
-  height: 60px;  
+  height: 60px;
   border-radius: 50%;
   transition: box-shadow 0.2s ease-in-out;
 }
