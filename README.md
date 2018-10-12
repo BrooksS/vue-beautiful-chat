@@ -90,9 +90,6 @@ export default {
           bg: '#4e8cff',
           text: '#ffffff'
         },
-        launcher: {
-          bg: '#4e8cff'
-        },
         messageList: {
           bg: '#ffffff'
         },
@@ -229,9 +226,6 @@ let redColors = {
   header: {
     bg: '#D32F2F',
     text: '#fff'
-  },
-  launcher: {
-    bg: '#D32F2F'
   },
   messageList: {
     bg: '#fff'

@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     linkColor() {
-      return this.chosenColor === 'dark' ? this.colors.sentMessage.text : this.colors.launcher.bg
+      return this.chosenColor === 'dark' ? this.colors.sentMessage.text : this.colors.header.bg
     },
     backgroundColor() {
       return this.chosenColor === 'dark' ? this.colors.messageList.bg : '#fff'

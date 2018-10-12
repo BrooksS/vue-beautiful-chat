@@ -20,7 +20,6 @@
       >
       </div>
       <div class="sc-user-input--buttons">
-        <div class="sc-user-input--button"></div>
         <div v-if="showEmoji" class="sc-user-input--button">
           <EmojiIcon :onEmojiPicked="_handleEmojiPicked" :color="colors.userInput.text" />
         </div>
@@ -74,6 +73,13 @@ export default {
       file: null,
       inputActive: false
     }
+  },
+  mounted () {
+    this.$refs.userInput.addEventListener("paste", function(event) {
+      event.preventDefault()
+      var text = event.clipboardData.getData("text/plain")
+      document.execCommand("insertHTML", false, text)
+    })
   },
   methods: {
     cancelFile () {
@@ -141,13 +147,11 @@ export default {
   bottom: 0;
   display: flex;
   background-color: #f4f7f9;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   transition: background-color .2s ease,box-shadow .2s ease;
 }
 
 .sc-user-input--text {
-  flex-grow: 3;
+  flex-grow: 1;
   resize: none;
   border: none;
   outline: none;
@@ -161,7 +165,7 @@ export default {
   word-wrap: break-word;
   color: #565867;
   -webkit-font-smoothing: antialiased;
-  max-height: 200px;
+  max-height: 70px;
   overflow: scroll;
   bottom: 0;
   overflow-x: hidden;

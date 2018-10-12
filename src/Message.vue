@@ -116,12 +116,6 @@ export default {
   text-align: center;
 }
 
-@media (max-width: 450px) {
-  .sc-message {
-    width: 80%;
-  }
-}
-
 .sc-message--text {
   padding: 5px 20px;
   border-radius: 6px;

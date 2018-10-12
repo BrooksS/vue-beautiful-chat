@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     linkColor() {
-      return this.chosenColor === 'dark' ? this.colors.sentMessage.text : this.colors.launcher.bg
+      return this.chosenColor === 'dark' ? this.colors.sentMessage.text : this.colors.header.bg
     },
     backgroundColor() {
       return this.chosenColor === 'dark' ? this.colors.messageList.bg : '#fff'
@@ -62,7 +62,7 @@ export default {
       return this.chosenColor === 'dark' ? '#eee' : '#222'
     },
     ctaColor() {
-      return this.chosenColor === 'dark' ? this.colors.userInput.bg : this.colors.launcher.bg
+      return this.chosenColor === 'dark' ? this.colors.userInput.bg : this.colors.header.bg
     },
     textareaStyle() {
       return {

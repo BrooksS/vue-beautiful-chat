@@ -1,7 +1,7 @@
 <template>
   <div class="sc-message--text" :style="messageColors">
-    <p v-html="messageText"></p>
-    <p v-if="data.meta" class='sc-message--meta' :style="{color: messageColors.color}">{{data.meta}}</p>
+    <p class="message-body" v-html="messageText"></p>
+    <p v-if="data.meta" class='message-body sc-message--meta' :style="{color: messageColors.color}">{{data.meta}}</p>
   </div>
 </template>
 
@@ -34,5 +34,9 @@ export default {
 <style scoped>
 a.chatLink {
   color: inherit !important;
+}
+
+.message-body {
+  margin: 3px auto
 }
 </style>

@@ -4,9 +4,6 @@ export default {
         bg: '#D32F2F',
         text: '#fff'
       },
-      launcher: {
-        bg: '#D32F2F'
-      },
       messageList: {
         bg: '#fff'
       },
@@ -27,9 +24,6 @@ export default {
       header: {
         bg: '#388E3C',
         text: '#fff'
-      },
-      launcher: {
-        bg: '#388E3C'
       },
       messageList: {
         bg: '#fff'
@@ -52,9 +46,6 @@ export default {
         bg: '#4e8cff',
         text: '#ffffff'
       },
-      launcher: {
-        bg: '#4e8cff'
-      },
       messageList: {
         bg: '#ffffff'
       },
@@ -75,9 +66,6 @@ export default {
       header: {
         bg: '#34495e',
         text: '#ecf0f1'
-      },
-      launcher: {
-        bg: '#34495e'
       },
       messageList: {
         bg: '#2c3e50'
