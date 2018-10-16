@@ -123,6 +123,7 @@ export default {
   justify-content: space-between;
   transition: 0.3s ease-in-out;
   font-family: 'Lato', sans-serif;
+  height: inherit;
 }
 
 .sc-message--me {
