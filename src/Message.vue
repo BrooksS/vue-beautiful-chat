@@ -5,9 +5,18 @@
         received: message.author !== 'me' && message.type !== 'system',
         system: message.type === 'system'
       }">
-      <div v-if="message.type !== 'system'" :title="authorName" class="sc-message--avatar" :style="{
-        backgroundImage: `url(${chatImageUrl})`
-      }" v-tooltip="message.author"></div>
+      <div
+        v-if="message.type !== 'system' && chatImageUrl"
+        :title="authorName"
+        class="sc-message--avatar"
+        :style="{ backgroundImage: `url(${chatImageUrl})` }"
+         v-tooltip="message.author"
+      />
+      <div v-else class="sc-message--initials">
+        <div>
+          {{ initials }}
+        </div>
+      </div>
       <TextMessage v-if="message.type === 'text'" :data="message.data" :messageColors="determineMessageColors()" />
       <EmojiMessage v-else-if="message.type === 'emoji'" :data="message.data" />
       <FileMessage v-else-if="message.type === 'file'" :data="message.data" :messageColors="determineMessageColors()" />
@@ -23,7 +32,7 @@ import FileMessage from './FileMessage.vue'
 import EmojiMessage from './EmojiMessage.vue'
 import TypingMessage from './TypingMessage.vue'
 import SystemMessage from './SystemMessage.vue'
-import chatIcon from './assets/chat-icon.svg'
+import initials from './filters/initials'
 
 export default {
   data () {
@@ -45,7 +54,7 @@ export default {
     },
     chatImageUrl: {
       type: String,
-      default: chatIcon
+      default: ''
     },
     colors: {
       type: Object,
@@ -53,6 +62,11 @@ export default {
     },
     authorName: {
       type: String
+    }
+  },
+  computed: {
+    initials () {
+      return initials(this.authorName)
     }
   },
   methods: {
@@ -108,6 +122,24 @@ export default {
   align-self: center;
   margin-right: 15px;
 }
+
+  .sc-message--initials {
+    display: flex;
+    background: #5d1e8c;
+    color: white;
+    min-width: 30px;
+    min-height: 30px;
+    text-align: center;
+    vertical-align: bottom;
+    line-height: 30px;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sc-message--content.sent .sc-message--initials {
+    display: none;
+  }
 
 .sc-message--meta {
   font-size: xx-small;
