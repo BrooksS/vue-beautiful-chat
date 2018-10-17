@@ -74,5 +74,6 @@ export default {
   overflow-y: auto;
   background-size: 100%;
   padding: 40px 0px;
+  height: 100%;
 }
 </style>
