@@ -123,23 +123,27 @@ export default {
   margin-right: 15px;
 }
 
-  .sc-message--initials {
-    display: flex;
-    background: #5d1e8c;
-    color: white;
-    min-width: 30px;
-    min-height: 30px;
-    text-align: center;
-    vertical-align: bottom;
-    line-height: 30px;
-    font-size: 12px;
-    align-items: center;
-    justify-content: center;
-  }
+.sc-message--initials {
+  display: flex;
+  background: #5d1e8c;
+  color: white;
+  min-width: 30px;
+  min-height: 30px;
+  text-align: center;
+  vertical-align: bottom;
+  line-height: 30px;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
 
-  .sc-message--content.sent .sc-message--initials {
-    display: none;
-  }
+.sc-message--content.sent .sc-message--initials {
+  display: none;
+}
+
+.sc-message--content.system .sc-message--initials {
+  display: none;
+}
 
 .sc-message--meta {
   font-size: xx-small;
